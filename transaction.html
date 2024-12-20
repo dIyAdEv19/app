@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Dashboard</title>
+    <link rel="stylesheet" href="transaction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Font Awesome icons -->
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h2>Payment Dashboard</h2>
+        <ul>
+            <li id="home" class="sidebar-item active"><i class="fas fa-home"></i> Home</li>
+            <li id="transaction-history" class="sidebar-item"><i class="fas fa-chart-bar"></i> Transaction History</li>
+            <li id="bills" class="sidebar-item"><i class="fas fa-file-invoice-dollar"></i> Bills</li>
+            <li id="settings" class="sidebar-item"><i class="fas fa-cogs"></i> Settings</li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <section class="top-section">
+            <h3>Top Transactions</h3>
+            <div class="top-scrollable-section">
+                <div class="top-card">
+                    <h2>Income</h2>
+                    <p>+ $1200</p>
+                    <p>Date: 12 Dec 2024</p>
+                </div>
+                <div class="top-card">
+                    <h2>Expenses</h2>
+                    <p>- $800</p>
+                    <p>Date: 10 Dec 2024</p>
+                </div>
+                <div class="top-card">
+                    <h2>Income</h2>
+                    <p>+ $500</p>
+                    <p>Date: 8 Dec 2024</p>
+                </div>
+                <div class="top-card">
+                    <h2>Expenses</h2>
+                    <p>- $300</p>
+                    <p>Date: 6 Dec 2024</p>
+                </div>
+            </div>
+            <button class="pay-btn">Add Transaction
+                <div class="dropdown-content">
+                    <a href="#" onclick="addTransaction()">Add Income</a>
+                    <a href="#" onclick="addTransaction()">Add Expense</a>
+                </div>
+            </button>
+        </section>
+
+        <section class="payment-section">
+            <h3>Payment Methods</h3>
+            <div class="payment-options">
+                <select id="paymentMethod" class="payment-dropdown">
+                    <option value="credit-card"><i class="fas fa-credit-card"></i> Credit Card</option>
+                    <option value="bank-transfer"><i class="fas fa-piggy-bank"></i> Bank Transfer</option>
+                    <option value="cash"><i class="fas fa-money-bill-wave"></i> Cash</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="transaction-history">
+            <h3>Transactions</h3>
+            <ul class="transaction-list">
+                <li><strong>Transaction ID:</strong> 001 - Income (+ $500) - 08 Dec 2024</li>
+                <li><strong>Transaction ID:</strong> 002 - Expenses (- $200) - 07 Dec 2024</li>
+                <li><strong>Transaction ID:</strong> 003 - Income (+ $1200) - 12 Dec 2024</li>
+                <li><strong>Transaction ID:</strong> 004 - Expenses (- $150) - 10 Dec 2024</li>
+            </ul>
+        </section>
+
+        <section class="bill-section">
+            <h3>Bills</h3>
+            <section class="bill-section">
+                <h3><i class="fas fa-file-invoice-dollar"></i> Bills Due</h3>
+                <table class="bill-table">
+                    <thead>
+                        <tr>
+                            <th>Bill ID</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Electricity</td>
+                            <td>$100</td>
+                            <td>15 Dec 2024</td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Internet</td>
+                            <td>$50</td>
+                            <td>18 Dec 2024</td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>Water</td>
+                            <td>$30</td>
+                            <td>20 Dec 2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+        </section>
+
+        <section class="add-transaction-section">
+            <h3>Add New Transaction</h3>
+            <div class="add-form-container">
+                <input type="text" placeholder="Transaction Description" id="transactionDescription">
+                <input type="number" placeholder="Amount" id="transactionAmount">
+                <button class="pay-btn" onclick="addTransaction()">Add</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript for sidebar toggling and dropdown menu -->
+    <script src="transaction.js"></script>
+    <script>
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
+                this.classList.add('active');
+                // Additional logic for page content can be added here
+            });
+        });
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function addTransaction() {
+            // Placeholder for adding a transaction
+            alert('Adding a transaction');
+        }
+    </script>
+</body>
+</html>

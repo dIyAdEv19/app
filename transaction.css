@@ -1,0 +1,423 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f7fa;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(45deg, #4b6cb7, #182848);
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-item {
+    padding: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.sidebar-item.active, .sidebar-item:hover {
+    background: #2c3e50;
+}
+
+.sidebar-item i {
+    margin-right: 10px;
+}
+
+/* Content Styles */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.top-scrollable-section {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.top-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+}
+
+.top-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.top-card p {
+    margin: 0;
+}
+
+/* Buttons */
+.pay-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #4b6cb7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+.pay-btn i {
+    margin-right: 10px;
+}
+
+.pay-btn:hover {
+    background: #2c3e50;
+}
+
+.pay-btn .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 1;
+    padding: 5px 0;
+}
+
+.pay-btn:hover .dropdown-content {
+    display: block;
+}
+
+.pay-btn .dropdown-content a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.pay-btn .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Transaction History and Bill Section */
+.transaction-history, .bill-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.transaction-history h3, .bill-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.transaction-list, .bill-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transaction-list li, .bill-table th, .bill-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.transaction-list li {
+    margin-bottom: 10px;
+}
+
+.bill-table th {
+    background-color: #f0f0f0;
+}
+
+.bill-table td:last-child {
+    text-align: right;
+}
+
+.bill-table tr:hover {
+    background-color: #f1f1f1;
+}/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f7fa;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(45deg, #4b6cb7, #182848);
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    padding: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+}
+
+.sidebar-item.active, .sidebar-item:hover {
+    background: #2c3e50;
+}
+
+.sidebar-item i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Content Styles */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.top-scrollable-section {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.top-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.top-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.top-card p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Buttons */
+.pay-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #4b6cb7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pay-btn i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.pay-btn:hover {
+    background: #2c3e50;
+}
+
+.pay-btn .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 1;
+    padding: 5px 0;
+    min-width: 150px;
+}
+
+.pay-btn:hover .dropdown-content {
+    display: block;
+}
+
+.pay-btn .dropdown-content a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    font-size: 1rem;
+}
+
+.pay-btn .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Transaction History and Bill Section */
+.transaction-history, .bill-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+
+.transaction-history h3, .bill-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.transaction-list, .bill-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.transaction-list li, .bill-table th, .bill-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.transaction-list li {
+    margin-bottom: 10px;
+}
+
+.bill-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.bill-table td:last-child {
+    text-align: right;
+}
+
+.bill-table tr:hover {
+    background-color: #f1f1f1;
+}
+.bill-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.bill-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.bill-section h3 i {
+    margin-right: 10px;
+    font-size: 1.2em; /* Adjust icon size */
+}
+
+.bill-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bill-table th, .bill-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.bill-table th {
+    background-color: #f0f0f0;
+}
+
+.bill-table td:last-child {
+    text-align: right;
+}
+
+.bill-table tr:hover {
+    background-color: #f1f1f1;
+}
